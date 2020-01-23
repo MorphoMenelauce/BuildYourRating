@@ -1,0 +1,28 @@
+{
+  "name": "buildyourrating",
+  "version": "1.0.0",
+  "description": "Coder sa propre Blockchain depuis zero* en Javascript",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreimert/BuildYourRating.git"
+  },
+  "keywords": [
+    "Blockchain",
+    "Tutorial",
+    "fr"
+  ],
+  "author": "Damien Reimert",
+  "license": "CC-BY-NC-1.0",
+  "bugs": {
+    "url": "https://github.com/dreimert/BuildYourRating/issues"
+  },
+  "homepage": "https://github.com/dreimert/BuildYourRating#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0",
+    "yargs": "^15.1.0"
+  }
+}
