@@ -65,7 +65,7 @@ J'ai réalisé pour vous un serveur de base de données minimaliste. Pour l'exé
 La base de données n'accepte que trois commandes : `get`, `set` et `keys` :
 
 * get : permet de récupérer la valeur d'une clé. Si la clé n'existe pas, retourne `null`.
-* set : permet d'associer une valeur à une clé. Si la clé existe déjà, elle n'est pas modifiée et la commande retourne `false`. Sinon, la valeur est affecté à la clé et la commande retourne `true`.
+* set : permet d'associer une valeur à une clé. Si la clé n'existe pas, la valeur est affecté à la clé et la commande retourne `true`. Si la clé existe, elle n'est pas modifiée mais si la valeur est identique, la commande retourne `true` sinon la commande retourne `false` et un message d'erreur.
 * keys : retourne la liste des clés de la base de données.
 
 J'ai aussi codé un *CLI* (Command Line Interface) pour passer des commandes à la DB. Pour voir les commandes que le *CLI* peut lancer : `node cli.js`.
@@ -73,6 +73,7 @@ J'ai aussi codé un *CLI* (Command Line Interface) pour passer des commandes à 
 Vous pouvez voir le code du serveur et du *CLI* dans les fichiers `db.js` et `cli.js`.
 
 #### Corrigez le *CLI* pour que toutes les commandes fonctionnent
+#### Corrigez la DB pour que la commande `set` fonctionne correctement
 
 ## Socket.io
 

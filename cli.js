@@ -4,16 +4,34 @@ const argv = require('yargs') // Analyse des paramètres
   .command('get <key>', 'Récupère la valeur associé à la clé')
   .command('set <key> <value>', 'Place une association clé / valeur')
   .command('keys', 'Demande la liste des clés')
+  .option('url', {
+    alias: 'u',
+    default: 'http://localhost:3000',
+    description: 'Url du serveur à contacter'
+  })
   .demandCommand(1, 'Vous devez indiquer une commande')
   .help()
   .argv;
 
-const URL = argv.url || "http://localhost:3000"; // Utilisation de l'url en paramètre ou par defaut localhost:3000
-
 const io = require('socket.io-client');
 
-const socket = io(URL, {
+const socket = io(argv.url, {
   path: '/byr',
+});
+
+socket.on('error', (error) => {
+  console.error('Haaaaaaaaaaaaa !', error);
+  socket.close();
+});
+
+socket.on('connect_error', (error) => {
+  console.error('Hello ?', error);
+  socket.close();
+});
+
+socket.on('connect_timeout', (timeout) => {
+  console.error('Poueuffff !', error);
+  socket.close();
 });
 
 socket.on('connect', () => {
