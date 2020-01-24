@@ -1,99 +1,114 @@
 # Build Your Rating
 
-Le but de ce tutoriel est de coder une blockchain depuis un exemple simple de base de données pour en comprendre les mécanismes. Cette blockchain sera très loin d'une blockchain de production mais permettra d'illustrer les différentes mécaniques la constituant. Les notions et les problématiques seront introduites au fur et à mesure de la progression. Certaines seront *un peu* simplifiées.
-
-Le code se fait en Javascript pour permettre au plus grand nombre de réaliser ce tutoriel et parce que c'est le langage de programmation que j'utilise quotidiennement :D. L'environnement utilisé pour l'écriture de ce sujet est Node.js (https://nodejs.org/fr/) en version 12 avec npm pour gérer les dépendances mais il doit fonctionner à partir de la version 10.
-
-Ce tutoriel est la troisième itération, vous pouvez trouver la seconde là : https://github.com/dreimert/DistributedBuildYourBlock.
-
-## Prérequis
-
-Je pars du principe que vous savez coder en Javascript et utiliser git et github. Si ce n'est pas le cas, je vous invite pour le prochain TD à lire :
-
-* Javascript :
-  * https://eloquentjavascript.net/ (troisième édition en anglais)
-  * https://fr.eloquentjavascript.net/ (première edition en français, anglais, allemand et polonais)
-* Programmation événementielle en Javascript:
-  * https://eloquentjavascript.net/11_async.html (Chapitre 11 de Eloquent JavaScript troisième édition)
-  * http://www.fil.univ-lille1.fr/~routier/enseignement/licence/tw1/spoc/chap10-evenements-partie1.html (Vidéo / cours de Jean-Christophe Routier)
-* Git : http://rogerdudler.github.io/git-guide/index.fr.html
-
-## Installation de node
-
-Télécharger les binaires et les décompresser :
-
-    wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz
-    tar -xJvf node-v12.14.1-linux-x64.tar.xz
-
-Mettre à jour votre PATH :
-
-    echo "export PATH=$PATH:$(pwd)/node-v12.14.1-linux-x64.tar.xz/bin/" >> ~/.bashrc
-
-Recharger vos variables d'environnement :
-
-    . ~/.bashrc
-
-Vérifier que node s'exécute bien :
-
-    node --version
-
-## Cloner ce dépôt
-
-```Bash
-git clone https://github.com/dreimert/BuildYourRating
-cd BuildYourRating
-```
-
-## Installer les dépendances
-
-```Bash
-npm install
-```
-
 ## Objectif
 
 Les buts de cette étape sont :
 
-* Mettre en place l'environnement du tutoriel.
-* Comprendre les bases de socket.io.
-* Comprendre le fonctionnement d'une base de données minimaliste.
+* Transformer notre base de données client / serveur en une base distribuée.
+* Comprendre les problèmes liés aux systèmes distribués.
 
-## Une base de données minimaliste
+## Confiance et défaillance
 
-J'ai réalisé pour vous un serveur de base de données minimaliste. Pour l'exécuter, taper la commande : `node db.js`.
+Dans l'approche par client / serveur, vous devez avoir confiance dans le serveur :
 
-La base de données n'accepte que trois commandes : `get`, `set` et `keys` :
+* Il ne va pas altérer les données : les perdre ou les corrompre.
+* Il va être disponible pour vous répondre : accepter de vous répondre, être actif et ne pas subir une panne.
 
-* get : permet de récupérer la valeur d'une clé. Si la clé n'existe pas, retourne `null`.
-* set : permet d'associer une valeur à une clé. Si la clé n'existe pas, la valeur est affecté à la clé et la commande retourne `true`. Si la clé existe, elle n'est pas modifiée mais si la valeur est identique, la commande retourne `true` sinon la commande retourne `false` et un message d'erreur.
-* keys : retourne la liste des clés de la base de données.
+Vous devez avoir confiance dans le fait que l'individu ou l'entité qui opère le serveur respecte ces critères. Mais face à des enjeux économiques ou politiques importants, il se peut qu'on ne puisse pas faire confiance à une seule entité.
 
-J'ai aussi codé un *CLI* (Command Line Interface) pour passer des commandes à la DB. Pour voir les commandes que le *CLI* peut lancer : `node cli.js`.
+Pour résister aux pannes ou à une forte demande vous pouvez aussi avoir envie de mettre plusieurs serveurs, chacun pouvant absorber une partie de la charge.
 
-Vous pouvez voir le code du serveur et du *CLI* dans les fichiers `db.js` et `cli.js`.
+La solution utilisée par la blockchain est la distribution. Il n'y a pas de serveur central, tout le monde peut se rajouter au réseau et assurer le rôle de serveur. C'est une base de données distribuées. Distribuer revient à avoir plusieurs serveurs qui se synchronisent entre eux. Il n'y a plus besoin d'avoir confiance dans un unique individu mais il faut faire confiance à l'ensemble du système donc à de multiple individus.
 
-#### Corrigez le *CLI* pour que toutes les commandes fonctionnent
-#### Corrigez la DB pour que la commande `set` fonctionne correctement
+#### Essayer de lancer plusieurs fois le serveur. Que ce passe-t'il ? Pourquoi ?
 
-## Socket.io
+Mettre plusieurs serveurs sur une même machine n'est pas une idée de génie. En production, l'utilité est assez limité mais en test ou en développement, c'est fort utile à moins de disposer de plusieurs machines.
 
-Pour gagner du temps, j'utilise *socket.io* qui me permet d'établir une connexion entre le serveur et le client. Vous pouvez trouver la documentation là : https://socket.io/.
+Il faut pouvoir lancer le serveur plusieurs fois avec des configurations différentes.
 
-Nous n'utiliseront pas beaucoup plus de fonctionnalités que celles utilisés dans l'exemple de la base de données. Il faut savoir envoyer et recevoir un message.
+#### Observer le code source de `db.js`. Lancez plusieurs serveurs en parallèle sans modifier le code source.
+
+Vous êtes maintenant en mesure de lancer plusieurs serveurs en parallèle mais ils ne se voient pas et ne se synchronisent pas.
+
+## Appariement et synchronisation
+
+Il faut maintenant faire en sorte que nos serveurs se voient et se parlent. Pour cela, il faut savoir comment les contacter.
+
+Vous allez essayer de mettre en place 3 serveurs qui communiquent entre eux et se synchronisent. Dans un premier temps, on va le mettre en dur dans le code source. Par exemple, supposons que vous utilisez les ports 3000, 4000 et 5000. Vous pouvez ajouter le code suivant pour calculer automatiquement vos voisins :
+
+```Javascript
+const ports = [3000, 4000, 5000];
+const others = [3000, 4000, 5000].filter((p) => {return p !== PORT});
+```
+
+#### Au lancement du serveur, connectez-vous aux autres pairs et construisez un tableau de sockets. Indice :
+
+```Javascript
+// Pour produire un nouveau tableau à partir d'un tableau
+const monTableauInitial = ['a', 'b', 'c', 'd'];
+const nouveauTableau = monTableauInitial.map((element, index) => {
+    // mon traitement pour chaque element
+    // ...
+    return element.repeat(index);
+});
+console.log(nouveauTableau); // ["", "b", "cc", 'ddd']
+```
+
+Votre serveur est connecté aux autres. Il faut maintenant mettre à jour les autres quand lui-même est modifié.
+
+#### Modifiez la méthode `set` pour qu'elle mette à jour les autres pairs.
+#### Utilisez le *CLI* pour vérifier que tous les serveurs sont dans le même état. Si vous ne voyez pas comment, regardez le code source.
+
+Vous avez réussi ? `set` une valeur sur un des serveurs met automatiquement à jour les autres ? Cool !
+
+Imaginez trois amis qui essayent de maintenir une connaissance commune du statut relationnel de leurs connaissances. Réfléchissez maintenant à tous les problèmes qui peuvent arriver. Que ce passe-t'il si un des amis est malade ou n'a plus de connexion réseau ? Si deux amis reçoivent en même temps des informations différentes pour une même personne ? Combien de temps avant de se synchroniser ?
+
+Nous verrons comment résoudre ces difficultés à l'étape suivant.
+
+## Jouer avec des inconnus
+
+Dans bitcoin et dans un système distribué plus généralement, on peut ajouter un noeud à tout moment et sans le connaitre.
+
+#### Mettez en commentaire la liste des ports que vous avez ajoutez à la section précédente.
+#### Ajoutez une commande `addPeer` à votre serveur et au *cli*. Cette commande prend en paramètre l'adresse d'un autre serveur et demande au serveur de se connecter à cette adresse et de transmettre les mises à jour, comme les serveurs qui étaient en "dur".
+
+Lancer deux serveurs, ajouter l'un à l'autre et ajouter une valeur au premier.
+
+#### La valeur est-elle bien propagée ?
+
+Ajouter une autre valeur à l'autre.
+
+#### La valeur est-elle bien propagée ?
+
+## Synchronisation initiale
+
+Lancer un troisième serveur. Ajouter ce serveur aux deux autres et ajouter les deux autres au nouveau.
+
+#### Demander une valeur définie précédemment au troisième serveur. Quel est le problème ?
+
+Modifier le code pour qu'à l'ajout d'un autre serveur, une requête `keys` soit envoyée et les clés inconnues ajoutées.
+
+## Partager ses voisins (bonus)
+
+Ajouter les voisins à chaque serveur, chaque que vous relancer les serveurs est assez pénible ? Il suffit de faire la même chose qu'à les clés. Quand vous ajoutez un pair, donnez l'informations aux autres pairs et permettez à un nouvel arrivant de récupérer la liste des pairs d'un serveur. Par exemple avec une commande `peers`. Vous n'aurez plus qu'à ajouter chaque pair qu'une fois.
+
+Ou si vous avez la flemme / êtes en retard, mettez en dur cette liste.
 
 ## Conclusion
 
-Vous avez survécu ? Cool !
-
-Quel est le rapport entre cette base de données et la blockchain ? La blockchain est une base de données avec les propriétés décrites. On ne peut pas mettre à jours les données ni en supprimer, on ne peut qu'en ajouter et lire le contenu.
-
-Mais la blockchain est une base de données distribuées, ce qui n'est pas le cas de la notre qui raisonne en terme de client / serveur. On va essayer de corriger ça !
+Nous avons un système qui marche plus ou moins, dans lequel n'importe quel noeud peut se connecter et reconstruire la base de données. C'est un système distribué minimaliste mais il ne fonctionne que dans un monde idéal où il n'y a pas de pannes ni de personnes mal intentionnées.
 
 ## Suite
 
-Allez à l'étape 2 : `git checkout etape-2`.
+Aller à l'étape 3 : `git checkout etape-3`.
 
 Pour continuer à lire le sujet :
 
 * soit vous lisez le fichier `README.md` sur votre machine.
-* soit sur GitHub, au-dessus de la liste des fichiers, vous pouvez cliquer sur `Branch: master` et sélectionner `etape-2`.
+* soit sur GitHub, au-dessus de la liste des fichiers, vous pouvez cliquer sur `Branch: master` et sélectionner `etape-3`.
+
+## Pour aller plus loin
+
+Pour continuer cette étape, vous pouvez essayer de discuter avec vos camarades pour étendre le système entre plusieurs machines.
+
+Vous pouvez mettre en place des backups sur disque de la base de données.
