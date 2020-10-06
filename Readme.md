@@ -77,7 +77,6 @@ J'ai aussi codé un *CLI* (Command Line Interface) pour passer des commandes à 
 Vous pouvez voir le code du serveur et du *CLI* dans les fichiers `db.js` et `cli.js`.
 
 #### Corrigez le *CLI* pour que toutes les commandes fonctionnent
-#### Corrigez la DB pour que la commande `set` fonctionne correctement
 
 ## Socket.io
 
