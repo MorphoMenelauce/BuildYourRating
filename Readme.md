@@ -41,7 +41,9 @@ const ports = [3000, 4000, 5000];
 const others = [3000, 4000, 5000].filter((p) => {return p !== PORT});
 ```
 
-#### Au lancement du serveur, connectez-vous aux autres pairs et construisez un tableau de sockets. Indice :
+#### Au lancement du serveur, connectez-vous aux autres pairs et construisez un tableau de sockets.
+
+##### Indice 1 :
 
 ```Javascript
 // Pour produire un nouveau tableau à partir d'un tableau
@@ -54,9 +56,22 @@ const nouveauTableau = monTableauInitial.map((element, index) => {
 console.log(nouveauTableau); // ["", "b", "cc", 'ddd']
 ```
 
+##### Indice 2 : Pour se connecter à un autre serveur, il suffit de faire comme le client.
+
 Votre serveur est connecté aux autres. Il faut maintenant mettre à jour les autres quand lui-même est modifié.
 
 #### Modifiez la méthode `set` pour qu'elle mette à jour les autres pairs.
+
+##### Indice :
+```Javascript
+// Un tableau remplit de choses
+const monTableau = ['a', 'b', 'c', 'd'];
+monTableau.forEach((element, index) => {
+    // Je peux faire quelque-chose pour chaque élément.
+    console.log("L'élément d'index", index, "est", element);
+});
+```
+
 #### Utilisez le *CLI* pour vérifier que tous les serveurs sont dans le même état. Si vous ne voyez pas comment, regardez le code source.
 
 Vous avez réussi ? `set` une valeur sur un des serveurs met automatiquement à jour les autres ? Cool !
@@ -67,7 +82,7 @@ Nous verrons comment résoudre ces difficultés à l'étape suivant.
 
 ## Jouer avec des inconnus
 
-Dans bitcoin et dans un système distribué plus généralement, on peut ajouter un noeud à tout moment et sans le connaitre.
+Dans Bitcoin et dans un système distribué plus généralement, on peut ajouter un noeud à tout moment et sans le connaitre.
 
 #### Mettez en commentaire la liste des ports que vous avez ajoutez à la section précédente.
 #### Ajoutez une commande `addPeer` à votre serveur et au *cli*. Cette commande prend en paramètre l'adresse d'un autre serveur et demande au serveur de se connecter à cette adresse et de transmettre les mises à jour, comme les serveurs qui étaient en "dur".
@@ -90,7 +105,7 @@ Modifier le code pour qu'à l'ajout d'un autre serveur, une requête `keys` soit
 
 ## Partager ses voisins (bonus)
 
-Ajouter les voisins à chaque serveur, chaque que vous relancer les serveurs est assez pénible ? Il suffit de faire la même chose qu'à les clés. Quand vous ajoutez un pair, donnez l'informations aux autres pairs et permettez à un nouvel arrivant de récupérer la liste des pairs d'un serveur. Par exemple avec une commande `peers`. Vous n'aurez plus qu'à ajouter chaque pair qu'une fois.
+Ajouter les voisins à chaque serveur et à chaque fois que vous relancez les serveurs est assez pénible ? Il suffit de faire la même chose qu'avec les clés. Quand vous ajoutez un pair, donnez l'informations aux autres pairs et permettez à un nouvel arrivant de récupérer la liste des pairs d'un serveur. Par exemple avec une commande `peers`. Vous n'aurez plus qu'à ajouter chaque pair qu'une fois.
 
 Ou si vous avez la flemme / êtes en retard, mettez en dur cette liste.
 
