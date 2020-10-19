@@ -136,8 +136,6 @@ class MaClass {
 }
 ```
 
-#### Maintenant, implémentez la gestion de `previous` et `index`. N'oubliez de vérifier que le block s'ajoute à la fin de la chaine. Que se passe-t'il quand votre client envoie la requête ?
-
 #### Pour simplifier le travail de votre client, ajoutez la commande `last` à la base de données qui renvoie le dernier block de la chaîne.
 
 Vous avez maintenant une chaîne de blocks. On ne peut plus modifier les enregistrements passées mais on n'a toujours pas d'algorithme de consensus.
