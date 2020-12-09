@@ -49,7 +49,6 @@ io.on('connect', (socket) => { // Pour chaque nouvlle connexion
                 });
             });
             callback(true);
-
         }
     });
 
