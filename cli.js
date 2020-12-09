@@ -4,6 +4,7 @@ const argv = require('yargs') // Analyse des paramètres
     .command('get <key>', 'Récupère la valeur associé à la clé')
     .command('set <key> <value>', 'Place une association clé / valeur')
     .command('keys', 'Demande la liste des clés')
+    .command('addPeer <address>', 'add a new server')
     .option('url', {
         alias: 'u',
         default: 'http://localhost:3000',
@@ -57,7 +58,10 @@ socket.on('connect', () => {
             });
             break;
         case 'addPeer':
-            console.error("J'ai oublié celle-là '-_-'");
+            socket.emit('addPeer', parseInt(argv.address), (value) => {
+                console.info(`addPeer : server ${argv.address} >> ${value}`);
+                socket.close();
+            });
             break;
         default:
             console.error("Commande inconnue");

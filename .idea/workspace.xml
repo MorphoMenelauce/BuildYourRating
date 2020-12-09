@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22d7aed4-c3bc-4daa-b4f2-15e3cc9a606f" name="Default Changelist" comment="" />
+    <list default="true" id="22d7aed4-c3bc-4daa-b4f2-15e3cc9a606f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/cli.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="etape-2" />
+        <entry key="$PROJECT_DIR$" value="etape-2-addPeer" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,22 +142,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="495" y="42" width="920" height="1015" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1607506005691" />
-    <state width="1893" height="272" key="GridCell.Tab.0.bottom" timestamp="1607505585947">
+    <state width="1893" height="272" key="GridCell.Tab.0.bottom" timestamp="1607507905903">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1893" height="272" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585947" />
-    <state width="1893" height="272" key="GridCell.Tab.0.center" timestamp="1607505585945">
+    <state width="1893" height="272" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1607507905903" />
+    <state width="1893" height="272" key="GridCell.Tab.0.center" timestamp="1607507905900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1893" height="272" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585945" />
-    <state width="1893" height="272" key="GridCell.Tab.0.left" timestamp="1607505585944">
+    <state width="1893" height="272" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1607507905900" />
+    <state width="1893" height="272" key="GridCell.Tab.0.left" timestamp="1607507905899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1893" height="272" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585944" />
-    <state width="1893" height="272" key="GridCell.Tab.0.right" timestamp="1607505585946">
+    <state width="1893" height="272" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1607507905899" />
+    <state width="1893" height="272" key="GridCell.Tab.0.right" timestamp="1607507905900">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1893" height="272" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585946" />
+    <state width="1893" height="272" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1607507905900" />
     <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1607506023801">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
