@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22d7aed4-c3bc-4daa-b4f2-15e3cc9a606f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="etape-2-addPeer" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1l5xMAxeaY2ER26Dj0Ni1DwCyjX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="db.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/db.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.db.js" />
+        <item itemvalue="Node.js.db.js" />
+        <item itemvalue="Node.js.db.js" />
+        <item itemvalue="Node.js.db.js" />
+        <item itemvalue="Node.js.db.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22d7aed4-c3bc-4daa-b4f2-15e3cc9a606f" name="Default Changelist" comment="" />
+      <created>1606900702878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606900702878</updated>
+      <workItem from="1606900704021" duration="8227000" />
+      <workItem from="1607505352945" duration="534000" />
+    </task>
+    <task id="LOCAL-00001" summary="etape 1 done">
+      <created>1606902993486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606902993486</updated>
+    </task>
+    <task id="LOCAL-00002" summary="etape 2 syn done&#10;addPeer not yet">
+      <created>1606908891861</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606908891861</updated>
+    </task>
+    <task id="LOCAL-00003" summary="etape 2 syn done&#10;non addPeer">
+      <created>1607505865497</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607505865497</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="etape 1 done" />
+    <MESSAGE value="etape 2 syn done&#10;addPeer not yet" />
+    <MESSAGE value="etape 2 syn done&#10;non addPeer" />
+    <option name="LAST_COMMIT_MESSAGE" value="etape 2 syn done&#10;non addPeer" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607505566115">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1607505566115" />
+    <state x="495" y="42" width="920" height="1030" key="CommitChangelistDialog2" timestamp="1607505865214">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="495" y="42" width="920" height="1030" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1607505865214" />
+    <state width="1893" height="272" key="GridCell.Tab.0.bottom" timestamp="1607505585947">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1893" height="272" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585947" />
+    <state width="1893" height="272" key="GridCell.Tab.0.center" timestamp="1607505585945">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1893" height="272" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585945" />
+    <state width="1893" height="272" key="GridCell.Tab.0.left" timestamp="1607505585944">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1893" height="272" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585944" />
+    <state width="1893" height="272" key="GridCell.Tab.0.right" timestamp="1607505585946">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1893" height="272" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585946" />
+    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1607505886353">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1607505886353" />
+    <state x="685" y="191" width="539" height="731" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606904517517">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="685" y="191" width="539" height="731" key="git4idea.branch.GitSmartOperationDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1606904517517" />
+  </component>
+</project>
