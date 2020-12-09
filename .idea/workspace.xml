@@ -28,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="etape-2-addPeer" />
+        <entry key="$PROJECT_DIR$" value="etape-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606900702878</updated>
       <workItem from="1606900704021" duration="8227000" />
-      <workItem from="1607505352945" duration="534000" />
+      <workItem from="1607505352945" duration="911000" />
     </task>
     <task id="LOCAL-00001" summary="etape 1 done">
       <created>1606902993486</created>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607505865497</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="etape 2 syn done&#10;addPeer branch">
+      <created>1607506005951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607506005951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,17 +126,18 @@
     <MESSAGE value="etape 1 done" />
     <MESSAGE value="etape 2 syn done&#10;addPeer not yet" />
     <MESSAGE value="etape 2 syn done&#10;non addPeer" />
-    <option name="LAST_COMMIT_MESSAGE" value="etape 2 syn done&#10;non addPeer" />
+    <MESSAGE value="etape 2 syn done&#10;addPeer branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="etape 2 syn done&#10;addPeer branch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607505566115">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1607505566115" />
-    <state x="495" y="42" width="920" height="1030" key="CommitChangelistDialog2" timestamp="1607505865214">
+    <state x="495" y="42" width="920" height="1015" key="CommitChangelistDialog2" timestamp="1607506005691">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="495" y="42" width="920" height="1030" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1607505865214" />
+    <state x="495" y="42" width="920" height="1015" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1607506005691" />
     <state width="1893" height="272" key="GridCell.Tab.0.bottom" timestamp="1607505585947">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -146,10 +154,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1893" height="272" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1607505585946" />
-    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1607505886353">
+    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1607506023801">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1607505886353" />
+    <state x="555" y="288" width="800" height="538" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1607506023801" />
     <state x="685" y="191" width="539" height="731" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606904517517">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
